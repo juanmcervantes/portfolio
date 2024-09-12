@@ -1,9 +1,13 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Rajdhani", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #000000;
     color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes the full height */
 }
 
 header {
@@ -16,9 +20,9 @@ header {
 h1 {
     font-family: "Rajdhani", sans-serif;
     font-weight: 600;
-    font-style: normal;     
 }
 
+/* Navigation Bar */
 nav ul {
     background-color: #000000;
     border: 1px solid #FFFFFF;
@@ -39,13 +43,12 @@ nav ul li a {
     font-weight: bold;
 }
 
+/* Main Section */
 main {
-    display: flex;
     justify-content: center;
     align-items: center;
     padding: 40px;
     background-color: #000000;
-    height: calc(100vh - 160px); /* Adjust based on header/footer size */
 }
 
 .content {
@@ -53,8 +56,10 @@ main {
     justify-content: space-between;
     align-items: center;
     max-width: 1000px;
-    width: 100%;
+    width: 90%; /* Fluid width to be responsive */
     color: #FFFFFF;
+    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .text {
@@ -63,26 +68,39 @@ main {
 }
 
 .image {
-    width: 35%;  /* Keep width and height the same to maintain a square shape */
-    height: 35%;  /* Set height as well to ensure a square */
-    max-width: 250px; /* Optional: to avoid the image getting too big */
-    max-height: 250px; /* Optional: cap the size */
-    
+    width: 250px; /* Fixed width for the image */
+    height: 250px; /* Ensures it stays square */
     border: 1.7px solid #FFFFFF;
-    border-radius: 50%;  /* 50% makes it fully circular */
-    object-fit: cover;  /* Ensures the image fits inside the circle without stretching */
+    border-radius: 50%;
+    object-fit: cover; /* Keeps image inside the circle */
+}
+
+/* Target the third image specifically */
+.image3wef {
+    width: 250px; /* Adjust the size to fit the logo better */
+    height: 250px; /* Ensure the image remains square */
+    border-radius: 50%;
+    object-fit: contain; /* 'contain' ensures the whole logo fits inside the circle */
+    background-color: #FFFFFF; /* Optional: add a background color if the logo has transparency */
+}
+
+.image3gs {
+    width: 250px; /* Adjust the size to fit the logo better */
+    height: 250px; /* Ensure the image remains square */
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    object-fit: contain; /* 'contain' ensures the whole logo fits inside the circle */
+    background-color: #FFFFFF; /* Optional: add a background color if the logo has transparency */
 }
 
 
+/* Footer */
 footer {
     background-color: #000000;
     border: 2px solid #FFFFFF;
     color: #FFFFFF;
     text-align: center;
     padding: 10px;
-    position: absolute;
-    bottom: 0;
     width: 100%;
 }
-
 
