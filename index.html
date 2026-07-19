@@ -34,9 +34,10 @@
           <feDisplacementMap in="SourceGraphic" in2="n" scale="9" />
         </filter>
 
-        <!-- rough-cut blob for the photo head -->
+        <!-- rough-cut head-shaped blob for the photo head: portrait oval,
+             sized so the whole face (hairline to chin) fits inside -->
         <clipPath id="head-blob">
-          <path d="M110 4 C150 2 180 24 186 60 C192 96 184 132 164 152 C144 168 76 168 56 150 C36 132 28 96 34 58 C40 22 70 6 110 4 Z" />
+          <path d="M110 4 C136 2 152 20 156 52 C160 90 156 126 146 146 C136 162 84 162 74 146 C64 126 60 90 64 52 C68 20 84 2 110 4 Z" />
         </clipPath>
 
         <!-- Paper-cutout avatar of Juan, canonical South Park proportions:
@@ -113,22 +114,28 @@
           <g stroke="#23201c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
             <g>
               <animateTransform attributeName="transform" type="translate" values="0 0;0 2;0 0" keyTimes="0;0.5;1" calcMode="discrete" dur="1.6s" repeatCount="indefinite" />
-              <ellipse cx="82" cy="240" rx="21" ry="8" fill="#23201c" />
-              <ellipse cx="138" cy="240" rx="21" ry="8" fill="#23201c" />
-              <rect x="76" y="212" width="26" height="22" fill="#3a5a8c" />
-              <rect x="118" y="212" width="26" height="22" fill="#3a5a8c" />
-              <rect x="38" y="164" width="22" height="42" rx="11" fill="#2b2b2e" />
-              <rect x="160" y="164" width="22" height="42" rx="11" fill="#2b2b2e" />
-              <circle cx="49" cy="212" r="9" fill="#edb98a" />
-              <circle cx="171" cy="212" r="9" fill="#edb98a" />
-              <path d="M64 158 h92 l6 56 h-104 z" fill="#f3efe4" />
-              <path d="M64 158 l-6 58 h40 l4 -58 z" fill="#2b2b2e" />
-              <path d="M156 158 l6 58 h-40 l-4 -58 z" fill="#2b2b2e" />
-              <path d="M76 158 l20 12 l-6 -12 z" fill="#2b2b2e" />
-              <path d="M144 158 l-20 12 l6 -12 z" fill="#2b2b2e" />
-              <line x1="110" y1="168" x2="110" y2="214" stroke="#9a9a9a" stroke-width="3" stroke-dasharray="3 3" />
-              <image href="./juan-head.jpg" x="30" y="-8" width="160" height="274" preserveAspectRatio="xMidYMin slice" clip-path="url(#head-blob)" />
-              <path d="M110 4 C150 2 180 24 186 60 C192 96 184 132 164 152 C144 168 76 168 56 150 C36 132 28 96 34 58 C40 22 70 6 110 4 Z" fill="none" />
+              <!-- body, slightly narrowed so the photo head stays dominant -->
+              <g transform="translate(13.2 30) scale(0.88)">
+                <ellipse cx="82" cy="240" rx="21" ry="8" fill="#23201c" />
+                <ellipse cx="138" cy="240" rx="21" ry="8" fill="#23201c" />
+                <rect x="76" y="212" width="26" height="22" fill="#3a5a8c" />
+                <rect x="118" y="212" width="26" height="22" fill="#3a5a8c" />
+                <rect x="38" y="164" width="22" height="42" rx="11" fill="#2b2b2e" />
+                <rect x="160" y="164" width="22" height="42" rx="11" fill="#2b2b2e" />
+                <circle cx="49" cy="212" r="9" fill="#edb98a" />
+                <circle cx="171" cy="212" r="9" fill="#edb98a" />
+                <path d="M64 158 h92 l6 56 h-104 z" fill="#f3efe4" />
+                <path d="M64 158 l-6 58 h40 l4 -58 z" fill="#2b2b2e" />
+                <path d="M156 158 l6 58 h-40 l-4 -58 z" fill="#2b2b2e" />
+                <path d="M76 158 l20 12 l-6 -12 z" fill="#2b2b2e" />
+                <path d="M144 158 l-20 12 l6 -12 z" fill="#2b2b2e" />
+                <line x1="110" y1="168" x2="110" y2="214" stroke="#9a9a9a" stroke-width="3" stroke-dasharray="3 3" />
+              </g>
+              <!-- white paper rim behind the cut edge -->
+              <path d="M110 4 C136 2 152 20 156 52 C160 90 156 126 146 146 C136 162 84 162 74 146 C64 126 60 90 64 52 C68 20 84 2 110 4 Z" fill="#fffdf5" stroke="#fffdf5" stroke-width="10" />
+              <!-- full face, hairline to chin -->
+              <image href="./juan-head.jpg" x="59" y="-5" width="102" height="175" preserveAspectRatio="xMidYMin slice" clip-path="url(#head-blob)" />
+              <path d="M110 4 C136 2 152 20 156 52 C160 90 156 126 146 146 C136 162 84 162 74 146 C64 126 60 90 64 52 C68 20 84 2 110 4 Z" fill="none" stroke-width="3.5" />
             </g>
           </g>
         </symbol>
