@@ -3,9 +3,13 @@
   position: absolute;
   inset: 0;
   z-index: 20;
+  /* the container is a full-desktop overlay: without this it swallows
+     every click/hover meant for the icons underneath it */
+  pointer-events: none;
 }
 
 .window {
+  pointer-events: auto;
   position: absolute;
   left: var(--x, 10%);
   top: var(--y, 10%);

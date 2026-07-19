@@ -207,6 +207,17 @@ a {
   animation: wobble var(--wobble);
 }
 
+/* selection highlight, like a real desktop — also the hover cue when
+   the wobble animation is disabled by prefers-reduced-motion */
+#icons > a:hover span,
+#icons > button:hover span,
+#icons > a:focus-visible span,
+#icons > button:focus-visible span {
+  background: var(--ink);
+  color: var(--paper-white);
+  text-shadow: none;
+}
+
 #icons span {
   max-width: 100%;
   overflow-wrap: anywhere;
