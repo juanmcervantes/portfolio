@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en" class="nojs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juan Cervantes — software engineer & builder</title>
+    <meta
+      name="description"
+      content="Juan Cervantes: software engineer and product builder from Guadalajara. AI operations & growth, founder of Jalisco Tech Week, Thiel Fellowship shortlist. Welcome to Paper OS."
+    />
+    <meta property="og:title" content="Juan Cervantes — Paper OS" />
+    <meta
+      property="og:description"
+      content="A portfolio cut out of construction paper. Software engineer, AI operations & growth, Guadalajara MX."
+    />
+    <meta name="theme-color" content="#58a8e8" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <script type="module" crossorigin src="./assets/index-DDNwDiHT.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BgrnfMYN.css">
+  </head>
+  <body>
+    <!-- SVG filter defs: the "hand-cut paper" edge -->
+    <svg class="svg-defs" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="rough-sm" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="3" seed="7" result="n" />
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="3" />
+        </filter>
+        <filter id="rough-md" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="12" result="n" />
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="5" />
+        </filter>
+        <filter id="rough-lg" x="-8%" y="-8%" width="116%" height="116%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="4" seed="3" result="n" />
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="9" />
+        </filter>
+
+        <!-- rough-cut blob for the photo head -->
+        <clipPath id="head-blob">
+          <path d="M110 4 C150 2 180 24 186 60 C192 96 184 132 164 152 C144 168 76 168 56 150 C36 132 28 96 34 58 C40 22 70 6 110 4 Z" />
+        </clipPath>
+
+        <!-- Paper-cutout avatar of Juan, canonical South Park proportions:
+             enormous head, tiny body, mitten hands, sideways feet. -->
+        <symbol id="avatar" viewBox="0 0 220 250">
+          <g stroke="#23201c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+            <g>
+              <animateTransform attributeName="transform" type="translate" values="0 0;0 2;0 0" keyTimes="0;0.5;1" calcMode="discrete" dur="1.6s" repeatCount="indefinite" />
+              <!-- feet, pointing outward -->
+              <ellipse cx="82" cy="240" rx="21" ry="8" fill="#23201c" />
+              <ellipse cx="138" cy="240" rx="21" ry="8" fill="#23201c" />
+              <!-- legs / jeans -->
+              <rect x="76" y="212" width="26" height="22" fill="#3a5a8c" />
+              <rect x="118" y="212" width="26" height="22" fill="#3a5a8c" />
+              <!-- stubby arms -->
+              <rect x="38" y="164" width="22" height="42" rx="11" fill="#2b2b2e" />
+              <rect x="160" y="164" width="22" height="42" rx="11" fill="#2b2b2e" />
+              <circle cx="49" cy="212" r="9" fill="#edb98a" />
+              <circle cx="171" cy="212" r="9" fill="#edb98a" />
+              <!-- torso: white tee under black moto jacket -->
+              <path d="M64 158 h92 l6 56 h-104 z" fill="#f3efe4" />
+              <path d="M64 158 l-6 58 h40 l4 -58 z" fill="#2b2b2e" />
+              <path d="M156 158 l6 58 h-40 l-4 -58 z" fill="#2b2b2e" />
+              <path d="M76 158 l20 12 l-6 -12 z" fill="#2b2b2e" />
+              <path d="M144 158 l-20 12 l6 -12 z" fill="#2b2b2e" />
+              <line x1="110" y1="168" x2="110" y2="214" stroke="#9a9a9a" stroke-width="3" stroke-dasharray="3 3" />
+              <!-- enormous head -->
+              <ellipse cx="110" cy="86" rx="82" ry="76" fill="#edb98a" />
+              <!-- ears -->
+              <circle cx="28" cy="94" r="9" fill="#edb98a" />
+              <circle cx="192" cy="94" r="9" fill="#edb98a" />
+              <!-- curly hair: scalloped silhouette -->
+              <path
+                d="M32 92
+                   c-14 -10 -12 -30 0 -36 c-8 -14 4 -28 18 -26 c-2 -16 16 -24 28 -16
+                   c6 -14 26 -18 34 -6 c10 -12 30 -8 34 4 c14 -6 28 4 26 16 c14 2 20 16 12 28
+                   c10 8 8 24 -4 30 c4 12 -6 22 -16 20 c0 0 -2 -18 -10 -28 c-18 -24 -50 -32 -84 -22 c-20 6 -34 20 -38 36 z"
+                fill="#1e1b18"
+              />
+              <circle cx="36" cy="66" r="11" fill="#1e1b18" />
+              <circle cx="184" cy="66" r="11" fill="#1e1b18" />
+              <circle cx="30" cy="90" r="9" fill="#1e1b18" />
+              <circle cx="190" cy="90" r="9" fill="#1e1b18" />
+              <!-- big touching eyes -->
+              <ellipse cx="93" cy="96" rx="18" ry="21" fill="#fff" />
+              <ellipse cx="127" cy="96" rx="18" ry="21" fill="#fff" />
+              <circle cx="99" cy="101" r="2.8" fill="#23201c" stroke="none" />
+              <circle cx="121" cy="101" r="2.8" fill="#23201c" stroke="none" />
+              <!-- blink -->
+              <g stroke="none" fill="#edb98a" opacity="0">
+                <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.92;0.94;0.97;1" dur="4.8s" repeatCount="indefinite" />
+                <ellipse cx="93" cy="96" rx="19" ry="22" />
+                <ellipse cx="127" cy="96" rx="19" ry="22" />
+              </g>
+              <!-- hexagonal wire glasses -->
+              <g fill="none" stroke-width="3.5">
+                <polygon points="71,84 90,75 109,84 109,108 90,119 71,108" />
+                <polygon points="111,84 130,75 149,84 149,108 130,119 111,108" />
+                <line x1="109" y1="92" x2="111" y2="92" />
+                <line x1="71" y1="92" x2="36" y2="86" />
+                <line x1="149" y1="92" x2="184" y2="86" />
+              </g>
+              <!-- brows -->
+              <path d="M74 66 q16 -8 30 -2" fill="none" />
+              <path d="M116 64 q14 -6 30 2" fill="none" />
+              <!-- mouth -->
+              <path d="M96 136 q14 9 28 1" fill="none" />
+            </g>
+          </g>
+        </symbol>
+
+        <!-- same tiny body, real photo head, roughly cut out — the celebrity treatment -->
+        <symbol id="avatar-photo" viewBox="0 0 220 250">
+          <g stroke="#23201c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+            <g>
+              <animateTransform attributeName="transform" type="translate" values="0 0;0 2;0 0" keyTimes="0;0.5;1" calcMode="discrete" dur="1.6s" repeatCount="indefinite" />
+              <ellipse cx="82" cy="240" rx="21" ry="8" fill="#23201c" />
+              <ellipse cx="138" cy="240" rx="21" ry="8" fill="#23201c" />
+              <rect x="76" y="212" width="26" height="22" fill="#3a5a8c" />
+              <rect x="118" y="212" width="26" height="22" fill="#3a5a8c" />
+              <rect x="38" y="164" width="22" height="42" rx="11" fill="#2b2b2e" />
+              <rect x="160" y="164" width="22" height="42" rx="11" fill="#2b2b2e" />
+              <circle cx="49" cy="212" r="9" fill="#edb98a" />
+              <circle cx="171" cy="212" r="9" fill="#edb98a" />
+              <path d="M64 158 h92 l6 56 h-104 z" fill="#f3efe4" />
+              <path d="M64 158 l-6 58 h40 l4 -58 z" fill="#2b2b2e" />
+              <path d="M156 158 l6 58 h-40 l-4 -58 z" fill="#2b2b2e" />
+              <path d="M76 158 l20 12 l-6 -12 z" fill="#2b2b2e" />
+              <path d="M144 158 l-20 12 l6 -12 z" fill="#2b2b2e" />
+              <line x1="110" y1="168" x2="110" y2="214" stroke="#9a9a9a" stroke-width="3" stroke-dasharray="3 3" />
+              <image href="./juan-head.jpg" x="30" y="-8" width="160" height="274" preserveAspectRatio="xMidYMin slice" clip-path="url(#head-blob)" />
+              <path d="M110 4 C150 2 180 24 186 60 C192 96 184 132 164 152 C144 168 76 168 56 150 C36 132 28 96 34 58 C40 22 70 6 110 4 Z" fill="none" />
+            </g>
+          </g>
+        </symbol>
+
+        <!-- original suited paper showman for the market gag:
+             balding, navy suit, mic up, legs planted. Any resemblance to
+             billionaires living or animated is purely coincidental. -->
+        <symbol id="suit-guy" viewBox="0 0 200 240">
+          <g stroke="#23201c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+            <!-- feet planted wide, pointing outward -->
+            <ellipse cx="52" cy="230" rx="20" ry="8" fill="#23201c" />
+            <ellipse cx="148" cy="230" rx="20" ry="8" fill="#23201c" />
+            <!-- legs apart -->
+            <path d="M78 186 l16 4 l-14 36 l-18 -4 z" fill="#27324e" />
+            <path d="M122 186 l-16 4 l14 36 l18 -4 z" fill="#27324e" />
+            <!-- left arm flung out -->
+            <path d="M56 138 l-30 34 l12 12 l30 -30 z" fill="#27324e" />
+            <circle cx="24" cy="180" r="9" fill="#edc9a3" />
+            <!-- torso: navy suit, shirt, red tie -->
+            <path d="M62 130 h76 l8 62 h-92 z" fill="#27324e" />
+            <path d="M92 130 h16 l-2 40 h-12 z" fill="#fff" />
+            <path d="M98 132 h6 l3 26 l-6 8 l-6 -8 z" fill="#c0392b" />
+            <path d="M78 130 l18 16 l-4 -16 z" fill="#1d2537" />
+            <path d="M122 130 l-18 16 l4 -16 z" fill="#1d2537" />
+            <!-- right arm raised with mic -->
+            <path d="M136 140 l34 -40 l14 10 l-32 42 z" fill="#27324e" />
+            <circle cx="176" cy="104" r="10" fill="#edc9a3" />
+            <!-- microphone angled toward the mouth -->
+            <rect x="150" y="82" width="12" height="30" rx="5" transform="rotate(38 156 97)" fill="#3a3a3a" />
+            <circle cx="146" cy="80" r="10" fill="#6a6a6a" />
+            <!-- head -->
+            <ellipse cx="96" cy="66" rx="56" ry="52" fill="#edc9a3" />
+            <circle cx="41" cy="72" r="8" fill="#edc9a3" />
+            <circle cx="151" cy="72" r="8" fill="#edc9a3" />
+            <!-- receded sandy side hair, bare forehead -->
+            <path d="M42 60 c-2 -14 8 -26 20 -30 c-4 8 -2 14 2 16 c-10 6 -16 14 -18 26 z" fill="#b8a98c" />
+            <path d="M150 60 c2 -14 -8 -26 -20 -30 c4 8 2 14 -2 16 c10 6 16 14 18 26 z" fill="#b8a98c" />
+            <!-- big touching eyes, determined brows -->
+            <ellipse cx="82" cy="72" rx="14" ry="17" fill="#fff" />
+            <ellipse cx="110" cy="72" rx="14" ry="17" fill="#fff" />
+            <circle cx="87" cy="76" r="2.4" fill="#23201c" stroke="none" />
+            <circle cx="105" cy="76" r="2.4" fill="#23201c" stroke="none" />
+            <path d="M66 54 l24 6" fill="none" />
+            <path d="M126 54 l-24 6" fill="none" />
+            <!-- mid-announcement mouth -->
+            <ellipse cx="98" cy="102" rx="9" ry="7" fill="#5e2f2a" />
+          </g>
+        </symbol>
+      </defs>
+    </svg>
+
+    <!-- boot screen -->
+    <div id="boot" aria-hidden="true">
+      <div class="boot__card">
+        <div class="boot__logo">JUAN&nbsp;OS</div>
+        <div class="boot__sub" data-i18n="boot.sub">cutting construction paper…</div>
+        <div class="boot__bar"><span></span></div>
+      </div>
+    </div>
+
+    <!-- menu bar -->
+    <header id="menubar">
+      <details class="menu menu--brand">
+        <summary>JUAN&nbsp;OS</summary>
+        <ul>
+          <li><button type="button" data-open-window="win-colophon" data-i18n="menu.colophon">about this site…</button></li>
+          <li><button type="button" id="restore-all" data-i18n="menu.restore">restore all windows</button></li>
+        </ul>
+      </details>
+      <details class="menu">
+        <summary data-i18n="menu.file">file</summary>
+        <ul>
+          <li><a href="./Juan_Cervantes_CV.pdf" target="_blank" rel="noopener" data-i18n="menu.cv">open cv.pdf ↗</a></li>
+          <li><a href="mailto:juancervantes0019@gmail.com" data-i18n="menu.email">send email ↗</a></li>
+        </ul>
+      </details>
+      <details class="menu" id="lang-menu">
+        <summary>lang</summary>
+        <ul>
+          <li><button type="button" data-lang="en">english</button></li>
+          <li><button type="button" data-lang="es">español</button></li>
+          <li><button type="button" data-lang="pt">português</button></li>
+        </ul>
+      </details>
+      <div class="menubar__spacer"></div>
+      <span id="clock" title="Guadalajara time">GDL --:--</span>
+    </header>
+
+    <main id="desktop">
+      <!-- paper landscape -->
+      <svg id="scene" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+        <g filter="url(#rough-lg)">
+          <circle cx="1300" cy="60" r="52" fill="#ffd23f" stroke="#23201c" stroke-width="4" />
+          <g stroke="#23201c" stroke-width="4">
+            <line x1="1300" y1="-14" x2="1300" y2="-30" />
+            <line x1="1300" y1="134" x2="1300" y2="150" />
+            <line x1="1226" y1="60" x2="1210" y2="60" />
+            <line x1="1374" y1="60" x2="1390" y2="60" />
+            <line x1="1248" y1="8" x2="1236" y2="-4" />
+            <line x1="1352" y1="8" x2="1364" y2="-4" />
+            <line x1="1248" y1="112" x2="1236" y2="124" />
+            <line x1="1352" y1="112" x2="1364" y2="124" />
+          </g>
+        </g>
+        <g class="cloud cloud--1" filter="url(#rough-md)">
+          <ellipse cx="240" cy="70" rx="70" ry="26" fill="#fffdf5" stroke="#23201c" stroke-width="4" />
+          <ellipse cx="300" cy="56" rx="44" ry="20" fill="#fffdf5" stroke="#23201c" stroke-width="4" />
+        </g>
+        <g class="cloud cloud--2" filter="url(#rough-md)">
+          <ellipse cx="760" cy="46" rx="60" ry="22" fill="#fffdf5" stroke="#23201c" stroke-width="4" />
+          <ellipse cx="812" cy="34" rx="36" ry="16" fill="#fffdf5" stroke="#23201c" stroke-width="4" />
+        </g>
+        <g filter="url(#rough-lg)">
+          <path d="M-20 320 L200 120 L420 320 Z" fill="#8fa8c8" stroke="#23201c" stroke-width="4" />
+          <path d="M200 120 L146 174 L172 168 L198 186 L228 166 L254 174 Z" fill="#fffdf5" stroke="#23201c" stroke-width="4" />
+          <path d="M300 320 L560 60 L820 320 Z" fill="#7d98bc" stroke="#23201c" stroke-width="4" />
+          <path d="M560 60 L496 128 L528 120 L556 142 L592 118 L624 128 Z" fill="#fffdf5" stroke="#23201c" stroke-width="4" />
+        </g>
+        <g filter="url(#rough-lg)">
+          <path d="M-20 320 L-20 280 Q360 236 720 272 Q1080 308 1460 264 L1460 320 Z" fill="#58b847" stroke="#23201c" stroke-width="4" />
+        </g>
+      </svg>
+
+      <!-- desktop icons -->
+      <nav id="icons" aria-label="Open windows">
+        <button type="button" data-open-window="win-about">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 4 h18 l8 8 v24 h-26 z" fill="#fffdf5" stroke="#23201c" stroke-width="2.5"/><path d="M26 4 v8 h8" fill="none" stroke="#23201c" stroke-width="2.5"/><line x1="13" y1="20" x2="27" y2="20" stroke="#23201c" stroke-width="2.5"/><line x1="13" y1="26" x2="27" y2="26" stroke="#23201c" stroke-width="2.5"/></svg>
+          <span>about.txt</span>
+        </button>
+        <button type="button" data-open-window="win-exp">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="11" fill="#8fb4e8" stroke="#23201c" stroke-width="2.5"/><g stroke="#23201c" stroke-width="2.5"><line x1="20" y1="3" x2="20" y2="9"/><line x1="20" y1="31" x2="20" y2="37"/><line x1="3" y1="20" x2="9" y2="20"/><line x1="31" y1="20" x2="37" y2="20"/></g><circle cx="20" cy="20" r="4" fill="#23201c"/></svg>
+          <span>experience.exe</span>
+        </button>
+        <button type="button" data-open-window="win-projects">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 10 h12 l4 5 h16 v19 h-32 z" fill="#ffd23f" stroke="#23201c" stroke-width="2.5"/></svg>
+          <span>projects/</span>
+        </button>
+        <button type="button" data-open-window="win-thiel">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="5" y="5" width="30" height="30" fill="#c9a9ee" stroke="#23201c" stroke-width="2.5"/><path d="M10 28 l7 -8 l6 4 l8 -12" fill="none" stroke="#23201c" stroke-width="2.5"/><path d="M31 10 l0 7 l-6 -3 z" fill="#23201c"/></svg>
+          <span>thiel_bet.exe</span>
+        </button>
+        <button type="button" data-open-window="win-community">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="14" cy="14" r="7" fill="#f2a65a" stroke="#23201c" stroke-width="2.5"/><circle cx="27" cy="16" r="6" fill="#f2a65a" stroke="#23201c" stroke-width="2.5"/><path d="M4 34 q10 -12 20 -2 q6 -6 12 0" fill="none" stroke="#23201c" stroke-width="2.5"/></svg>
+          <span data-i18n="icons.community">community/</span>
+        </button>
+        <button type="button" data-open-window="win-stack">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 12 l14 -7 l14 7 l-14 7 z" fill="#7fd4c1" stroke="#23201c" stroke-width="2.5"/><path d="M6 20 l14 7 l14 -7" fill="none" stroke="#23201c" stroke-width="2.5"/><path d="M6 27 l14 7 l14 -7" fill="none" stroke="#23201c" stroke-width="2.5"/></svg>
+          <span>stack.cfg</span>
+        </button>
+        <button type="button" data-open-window="win-contact">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="9" width="32" height="22" fill="#f08a8a" stroke="#23201c" stroke-width="2.5"/><path d="M4 9 l16 13 l16 -13" fill="none" stroke="#23201c" stroke-width="2.5"/></svg>
+          <span>contact.exe</span>
+        </button>
+        <a href="./Juan_Cervantes_CV.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 4 h18 l8 8 v24 h-26 z" fill="#fffdf5" stroke="#23201c" stroke-width="2.5"/><path d="M26 4 v8 h8" fill="none" stroke="#23201c" stroke-width="2.5"/><text x="20" y="30" text-anchor="middle" font-size="10" font-weight="bold" fill="#e8483f" font-family="monospace">PDF</text></svg>
+          <span data-i18n="icons.cv">not_a_virus.pdf</span>
+        </a>
+      </nav>
+
+      <!-- windows -->
+      <div id="windows">
+        <section class="window" id="win-about" data-color="yellow" data-open="true" style="--x: 4%; --y: 6%; --w: 26rem; --r: -0.5deg">
+          <header class="window__bar">
+            <h2 class="window__title">about.txt</h2>
+            <div class="window__controls">
+              <button type="button" class="window__btn" data-action="minimize" aria-label="Minimize window">–</button>
+              <button type="button" class="window__btn" data-action="close" aria-label="Close window">×</button>
+            </div>
+          </header>
+          <div class="window__body about">
+            <div class="about__head">
+              <div>
+                <h1 class="about__name">Juan Cervantes</h1>
+                <p class="about__tag" data-i18n="about.tag">software engineer · 4× founder · Guadalajara, MX</p>
+              </div>
+              <button type="button" class="about__avatarbtn" id="avatar-toggle" aria-label="Toggle between cartoon and photo avatar">
+                <svg class="about__avatar" aria-hidden="true"><use class="avatar-use" href="#avatar" /></svg>
+                <span class="about__hint" data-i18n="about.hint">click me</span>
+              </button>
+            </div>
+            <p data-i18n="about.p1">
+              I build products end to end — code, operations and growth. Right now I'm the AI Operations &amp; Growth
+              Manager at Autopaquete, a profitable logistics-tech platform with 5,000+ users across Mexico and LATAM:
+              I lead its transition to an AI-native operation and I'm building the growth function from the ground up.
+            </p>
+            <p data-i18n="about.p2">
+              On the side, I'm turning my family's real-estate business (flipping bank-repossessed houses) into an
+              AI-native operation. Before: co-founder &amp; CEO of Docstay for 2.5 years, co-founder of Kontratista and
+              Inmovating, and co-founder &amp; tech director of Jalisco's first statewide Tech Week. Thiel Fellowship
+              shortlist. World Economic Forum Global Shaper.
+            </p>
+            <div class="linkrow">
+              <a class="paper-btn" href="https://github.com/juanmcervantes" target="_blank" rel="noopener">github</a>
+              <a class="paper-btn" href="https://www.linkedin.com/in/juanm-cervantes/" target="_blank" rel="noopener">linkedin</a>
+              <a class="paper-btn" href="https://x.com/juanm_cervantes" target="_blank" rel="noopener">x</a>
+              <a class="paper-btn" href="mailto:juancervantes0019@gmail.com">email</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="window" id="win-exp" data-color="blue" data-open="true" style="--x: 34%; --y: 3%; --w: 30rem; --r: 0.4deg">
+          <header class="window__bar">
+            <h2 class="window__title">experience.exe</h2>
+            <div class="window__controls">
+              <button type="button" class="window__btn" data-action="minimize" aria-label="Minimize window">–</button>
+              <button type="button" class="window__btn" data-action="close" aria-label="Close window">×</button>
+            </div>
+          </header>
+          <div class="window__body">
+            <article class="role">
+              <h3><span data-i18n="exp.auto.title">AI Operations &amp; Growth Manager</span> <em>· Autopaquete</em></h3>
+              <p class="role__dates" data-i18n="dates.auto">jun 2026 – present</p>
+              <p data-i18n="exp.auto.sum">
+                Leading a profitable logistics-tech platform's transition to an AI-native operation and building the
+                growth function from scratch: AI agents and automations across operations, paid &amp; organic growth
+                engines, and the data infrastructure connecting them.
+              </p>
+              <ul class="chips">
+                <li data-i18n="exp.auto.c1">5,000+ users · MX &amp; LATAM</li>
+                <li data-i18n="exp.auto.c2">mission: ARR $5M → $10M</li>
+              </ul>
+            </article>
+            <article class="role">
+              <h3><span data-i18n="exp.ham.title">Co-founder · Product &amp; Front-End</span> <em>· Hammtiell Technologies</em></h3>
+              <p class="role__dates" data-i18n="dates.ham">dec 2019 – present</p>
+              <p data-i18n="exp.ham.sum">
+                Product studio work: Agile rituals, PRDs and acceptance criteria; taking clients from idea to shipped
+                product through discovery, prototyping and phased releases.
+              </p>
+            </article>
+            <article class="role">
+              <h3><span data-i18n="exp.doc.title">Co-founder &amp; CEO</span> <em>· Docstay</em></h3>
+              <p class="role__dates" data-i18n="dates.doc">jul 2021 – jan 2024</p>
+              <p data-i18n="exp.doc.sum">
+                "Airbnb for medical offices." Led architecture (React, Next.js, GraphQL on Google Cloud), a custom
+                design system, Stripe Connect payments and Cal.com scheduling. Bootstrapped with zero marketing budget.
+              </p>
+              <ul class="chips">
+                <li data-i18n="exp.doc.c1">60+ offices · 4 states</li>
+                <li data-i18n="exp.doc.c2">900+ hours booked</li>
+                <li data-i18n="exp.doc.c3">+20% occupancy</li>
+                <li data-i18n="exp.doc.c4">3× doctor income</li>
+              </ul>
+            </article>
+            <article class="role">
+              <h3><span data-i18n="exp.kon.title">Co-founder &amp; Product Manager</span> <em>· Kontratista</em></h3>
+              <p class="role__dates" data-i18n="dates.kon">jan 2024 – jul 2024</p>
+              <p data-i18n="exp.kon.sum">
+                Construction-site ↔ office workflows built on tools crews already knew (Teams, Asana, APIs, automated
+                pipelines), shaped with 10 design partners on real construction sites.
+              </p>
+            </article>
+            <article class="role">
+              <h3><span data-i18n="exp.inm.title">Co-founder · PM · Front-End</span> <em>· Inmovating</em></h3>
+              <p class="role__dates" data-i18n="dates.inm">sep 2020 – jun 2021</p>
+              <p data-i18n="exp.inm.sum">
+                Zillow-style digital real-estate purchasing platform. Serverless on Google Cloud, cutting costs by
+                $6k/year.
+              </p>
+              <ul class="chips">
+                <li data-i18n="exp.inm.c1">$25k USD raised</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="window" id="win-projects" data-color="green" data-open="true" style="--x: 10%; --y: 42%; --w: 28rem; --r: 0.6deg">
+          <header class="window__bar">
+            <h2 class="window__title">projects/</h2>
+            <div class="window__controls">
+              <button type="button" class="window__btn" data-action="minimize" aria-label="Minimize window">–</button>
+              <button type="button" class="window__btn" data-action="close" aria-label="Close window">×</button>
+            </div>
+          </header>
+          <div class="window__body">
+            <article class="project">
+              <h3><a href="https://jaliscotechweek.com" target="_blank" rel="noopener">Jalisco Tech Week ↗</a></h3>
+              <p data-i18n="proj.jtw">
+                Co-founded Jalisco's first statewide tech week; as tech director, led the senior team that built the
+                platform — React/TypeScript/Astro on the Luma Events API.
+              </p>
+              <ul class="chips">
+                <li data-i18n="proj.jtw.c1">90+ events in 6 days</li>
+                <li data-i18n="proj.jtw.c2">4,000+ attendees</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>CCR agent pipeline <em data-i18n="proj.ccr.tag">· family side quest</em></h3>
+              <p data-i18n="proj.ccr">
+                My family flips bank-repossessed houses; I'm making the operation AI-native — agents that read property
+                registries, zoning maps and valuations. In production. Family-approved.
+              </p>
+            </article>
+            <article class="project">
+              <h3>Docstay</h3>
+              <p data-i18n="proj.doc">
+                The medical-office marketplace — my longest bet and best teacher: 2.5 years as CEO, from first commit to
+                60+ listed offices.
+              </p>
+            </article>
+            <article class="project">
+              <h3>Hestia</h3>
+              <p data-i18n="proj.hes">
+                Diet-specific food delivery for campus, pretotyped in Swift (2019). The paper here is older and it
+                shows.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="window" id="win-thiel" data-color="purple" data-open="true" style="--x: 64%; --y: 8%; --w: 22rem; --r: -1deg">
+          <header class="window__bar">
+            <h2 class="window__title">thiel_bet.exe</h2>
+            <div class="window__controls">
+              <button type="button" class="window__btn" data-action="minimize" aria-label="Minimize window">–</button>
+              <button type="button" class="window__btn" data-action="close" aria-label="Close window">×</button>
+            </div>
+          </header>
+          <div class="window__body market">
+            <p class="market__q" data-i18n="thiel.q">MARKET: will Juan build something huge?</p>
+            <div class="market__row">
+              <button type="button" class="market__yes" id="bet-yes" data-i18n="thiel.yes">YES 94¢ ▲</button>
+              <button type="button" class="market__no" id="bet-no" data-i18n="thiel.no">NO 6¢ ▼</button>
+            </div>
+            <div class="market__scene">
+              <svg class="market__guy" aria-hidden="true"><use href="#suit-guy" /></svg>
+              <p class="market__caption" data-i18n="thiel.caption">an unbiased market maker</p>
+            </div>
+            <p class="market__fact" data-i18n="thiel.fact">
+              real data point: Thiel Fellowship — shortlisted, 2024 class. Advanced through two selection rounds.
+            </p>
+            <p class="market__vol" data-i18n="thiel.vol">vol: $1,000,000 (construction-paper dollars)</p>
+          </div>
+        </section>
+
+        <section class="window" id="win-community" data-color="orange" style="--x: 52%; --y: 46%; --w: 24rem; --r: 0.8deg">
+          <header class="window__bar">
+            <h2 class="window__title" data-i18n="win.community">community/</h2>
+            <div class="window__controls">
+              <button type="button" class="window__btn" data-action="minimize" aria-label="Minimize window">–</button>
+              <button type="button" class="window__btn" data-action="close" aria-label="Close window">×</button>
+            </div>
+          </header>
+          <div class="window__body">
+            <article class="role">
+              <h3>Global Shaper <em>· World Economic Forum</em></h3>
+              <p class="role__dates">mar 2024 – <span data-i18n="common.present">present</span></p>
+              <p data-i18n="comm.wef">
+                Scouting young talent and building collaboration across the Guadalajara hub and hubs worldwide.
+              </p>
+            </article>
+            <article class="role">
+              <h3><span data-i18n="comm.mv.title">Founder</span> <em>· Mariachi's Valley</em></h3>
+              <p class="role__dates">nov 2022 – <span data-i18n="common.present">present</span></p>
+              <p data-i18n="comm.mv">
+                A community of 250+ technical startup founders — collectively $100M+ raised, including YC and
+                500 Startups alumni.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="window" id="win-stack" data-color="teal" style="--x: 68%; --y: 52%; --w: 24rem; --r: -0.7deg">
+          <header class="window__bar">
+            <h2 class="window__title">stack.cfg</h2>
+            <div class="window__controls">
+              <button type="button" class="window__btn" data-action="minimize" aria-label="Minimize window">–</button>
+              <button type="button" class="window__btn" data-action="close" aria-label="Close window">×</button>
+            </div>
+          </header>
+          <div class="window__body stack">
+            <p><span class="stack__key">[languages]</span> TypeScript · JavaScript · HTML · CSS · Swift</p>
+            <p><span class="stack__key">[frameworks]</span> React · Next.js · Astro · Node.js</p>
+            <p><span class="stack__key">[ai_ops]</span> <span data-i18n="stack.ai">LLM agent systems · Claude API · MCP · workflow automation</span></p>
+            <p><span class="stack__key">[tools]</span> Git · GitHub Actions · GitLab · Vite · Linear · Jira</p>
+            <p><span class="stack__key">[methods]</span> Agile · Scrum · Kanban · Lean · Design Sprints</p>
+            <p class="stack__comment" data-i18n="stack.comment"># this site: Vite + vanilla TypeScript + hand-cut CSS. zero frameworks, zero cookies.</p>
+          </div>
+        </section>
+
+        <section class="window" id="win-contact" data-color="red" data-open="true" style="--x: 40%; --y: 56%; --w: 24rem; --r: 0.5deg">
+          <header class="window__bar">
+            <h2 class="window__title">contact.exe</h2>
+            <div class="window__controls">
+              <button type="button" class="window__btn" data-action="minimize" aria-label="Minimize window">–</button>
+              <button type="button" class="window__btn" data-action="close" aria-label="Close window">×</button>
+            </div>
+          </header>
+          <div class="window__body contact">
+            <p data-i18n="contact.lead">say hi — I answer fast.</p>
+            <ul class="contact__list">
+              <li><span>email</span><a href="mailto:juancervantes0019@gmail.com">juancervantes0019@gmail.com</a></li>
+              <li><span>github</span><a href="https://github.com/juanmcervantes" target="_blank" rel="noopener">juanmcervantes</a></li>
+              <li><span>linkedin</span><a href="https://www.linkedin.com/in/juanm-cervantes/" target="_blank" rel="noopener">juanm-cervantes</a></li>
+              <li><span>x</span><a href="https://x.com/juanm_cervantes" target="_blank" rel="noopener">@juanm_cervantes</a></li>
+              <li><span data-i18n="contact.phone">phone</span><a href="tel:+523314101820">+52 33 1410 1820</a></li>
+              <li><span data-i18n="contact.loc">location</span><span data-i18n="contact.locv">Guadalajara, MX · GMT-6</span></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="window" id="win-colophon" data-color="kraft" style="--x: 26%; --y: 20%; --w: 26rem; --r: -0.4deg">
+          <header class="window__bar">
+            <h2 class="window__title" data-i18n="win.colophon">about_this_site.txt</h2>
+            <div class="window__controls">
+              <button type="button" class="window__btn" data-action="minimize" aria-label="Minimize window">–</button>
+              <button type="button" class="window__btn" data-action="close" aria-label="Close window">×</button>
+            </div>
+          </header>
+          <div class="window__body">
+            <p data-i18n="colo.p1">
+              This is Paper OS: a desktop operating system cut out of construction paper. Inspired by a certain NYC
+              band's website and a certain mountain town in Colorado.
+            </p>
+            <p data-i18n="colo.p2">
+              Typefaces: VT323 &amp; Luckiest Guy. Built with Vite + vanilla TypeScript — the window manager is ~150
+              lines of hand-written TS. No UI framework, no CSS framework, no tracking.
+            </p>
+            <p class="colo__copy">© 2026 Juan Cervantes. <span data-i18n="colo.recycled">All paper recycled.</span></p>
+          </div>
+        </section>
+
+        <!-- spam gag -->
+        <section class="window window--popup" id="win-prize" data-color="yellow" style="--x: 30%; --y: 28%; --w: 20rem; --r: -1.5deg">
+          <header class="window__bar">
+            <h2 class="window__title">☆☆☆.exe</h2>
+            <div class="window__controls">
+              <button type="button" class="window__btn" data-action="close" aria-label="Close window">×</button>
+            </div>
+          </header>
+          <div class="window__body prize">
+            <p class="prize__big" data-i18n="prize.big">CONGRATULATIONS!</p>
+            <p data-i18n="prize.body">You are the 1,000,000th visitor to this website.*</p>
+            <button type="button" class="paper-btn paper-btn--loud" id="claim-prize" data-i18n="prize.cta">CLAIM PRIZE</button>
+            <p class="prize__fine" data-i18n="prize.fine">*number may be off by 999,999.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- cookie parody -->
+    <aside id="cookie-note" hidden>
+      <span data-i18n="cookie.body">this site uses zero cookies. we don't even have a kitchen.</span>
+      <button type="button" class="paper-btn" id="cookie-ok">ok</button>
+    </aside>
+
+    <!-- screensaver -->
+    <div id="screensaver" hidden>
+      <svg class="screensaver__head" aria-hidden="true"><use class="avatar-use" href="#avatar" /></svg>
+      <p data-i18n="saver.hint">paper_saver.scr — move to wake</p>
+    </div>
+
+    <noscript>
+      <div class="noscript-note">
+        JavaScript is off — no problem, everything above is plain HTML. The windows just won't drag.
+      </div>
+    </noscript>
+  </body>
+</html>
