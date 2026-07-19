@@ -1,0 +1,37 @@
+/* ————————————————————————————————————————————————
+   PAPER OS · design tokens
+   A desktop operating system cut out of construction paper.
+   Palette = saturated construction-paper primaries on a sky-blue desk.
+   ———————————————————————————————————————————————— */
+:root {
+  /* construction paper */
+  --paper-sky: #58a8e8;
+  --paper-snow: #faf4e4;
+  --paper-white: #fffdf5;
+  --paper-red: #e8483f;
+  --paper-red-soft: #f08a8a;
+  --paper-orange: #f2a65a;
+  --paper-yellow: #ffd23f;
+  --paper-green: #58b847;
+  --paper-teal: #7fd4c1;
+  --paper-blue: #8fb4e8;
+  --paper-purple: #c9a9ee;
+  --paper-kraft: #d8b98a;
+  --ink: #23201c;
+  --ink-soft: rgba(35, 32, 28, 0.62);
+
+  /* layered-paper shadows: hard, no blur */
+  --shadow-paper: 0.4rem 0.45rem 0 rgba(35, 32, 28, 0.28);
+  --shadow-paper-sm: 0.2rem 0.25rem 0 rgba(35, 32, 28, 0.28);
+
+  /* type */
+  --font-chrome: "VT323", "Courier New", monospace;
+  --font-display: "Luckiest Guy", "Arial Black", sans-serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* motion (stop-motion wobble) */
+  --wobble: 0.28s steps(2, jump-none) infinite alternate;
+
+  /* paper grain, tiled */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.16'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}

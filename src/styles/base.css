@@ -1,0 +1,447 @@
+/* PAPER OS · base: desk, menu bar, icons, boot, gags */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper-sky);
+  overflow: hidden;
+  line-height: 1.45;
+}
+
+/* paper grain over everything */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: var(--grain);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.svg-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--paper-yellow);
+}
+
+/* ————— menu bar ————— */
+#menubar {
+  position: relative;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem 0.75rem;
+  background: var(--paper-snow);
+  border-bottom: 3px solid var(--ink);
+  font-family: var(--font-chrome);
+  font-size: 1.25rem;
+  text-transform: lowercase;
+}
+
+.menubar__spacer {
+  flex: 1;
+}
+
+#clock {
+  letter-spacing: 0.05em;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.05rem 0.6rem;
+  user-select: none;
+}
+
+.menu > summary::-webkit-details-marker {
+  display: none;
+}
+
+.menu[open] > summary,
+.menu > summary:hover {
+  background: var(--ink);
+  color: var(--paper-snow);
+}
+
+.menu--brand > summary {
+  font-weight: bold;
+  letter-spacing: 0.08em;
+}
+
+.menu > ul {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin: 0.2rem 0 0;
+  padding: 0.3rem;
+  list-style: none;
+  min-width: 12rem;
+  background: var(--paper-snow);
+  border: 3px solid var(--ink);
+  box-shadow: var(--shadow-paper-sm);
+  z-index: 600;
+}
+
+.menu li > a,
+.menu li > button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.15rem 0.5rem;
+  background: none;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menu li > a:hover,
+.menu li > button:hover {
+  background: var(--ink);
+  color: var(--paper-snow);
+}
+
+.menu [aria-current="true"]::before {
+  content: "✓ ";
+}
+
+/* ————— desktop ————— */
+#desktop {
+  position: relative;
+  height: calc(100% - 2.4rem);
+  overflow: hidden;
+}
+
+#scene {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: min(44vh, 320px);
+  pointer-events: none;
+}
+
+.cloud--1 {
+  animation: drift 90s linear infinite;
+}
+
+.cloud--2 {
+  animation: drift 140s linear infinite reverse;
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(-15%);
+  }
+  to {
+    transform: translateX(115%);
+  }
+}
+
+/* ————— desktop icons ————— */
+#icons {
+  position: absolute;
+  top: 1rem;
+  right: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 10;
+}
+
+#icons > a,
+#icons > button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  width: 7.4rem;
+  padding: 0.4rem 0.2rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-family: var(--font-chrome);
+  font-size: 1rem;
+  line-height: 1.1;
+  color: var(--paper-white);
+  text-shadow: 2px 2px 0 rgba(35, 32, 28, 0.55);
+  text-decoration: none;
+}
+
+#icons svg {
+  width: 2.9rem;
+  height: 2.9rem;
+  filter: drop-shadow(3px 3px 0 rgba(35, 32, 28, 0.35));
+}
+
+#icons > a:hover svg,
+#icons > button:hover svg,
+#icons > a:focus-visible svg,
+#icons > button:focus-visible svg {
+  animation: wobble var(--wobble);
+}
+
+#icons span {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+@keyframes wobble {
+  from {
+    transform: rotate(-3deg);
+  }
+  to {
+    transform: rotate(3deg);
+  }
+}
+
+/* ————— paper button ————— */
+.paper-btn {
+  display: inline-block;
+  padding: 0.2rem 0.85rem;
+  background: var(--paper-white);
+  border: 3px solid var(--ink);
+  box-shadow: var(--shadow-paper-sm);
+  font-family: var(--font-chrome);
+  font-size: 1.15rem;
+  text-transform: lowercase;
+  text-decoration: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.paper-btn:hover,
+.paper-btn:focus-visible {
+  background: var(--paper-yellow);
+  animation: wobble var(--wobble);
+}
+
+.paper-btn:active {
+  translate: 0.2rem 0.25rem;
+  box-shadow: none;
+}
+
+.paper-btn--loud {
+  background: var(--paper-red);
+  color: var(--paper-white);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  padding: 0.45rem 1rem 0.25rem;
+}
+
+/* ————— boot screen ————— */
+#boot {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  background: var(--paper-sky);
+}
+
+#boot.boot--done {
+  display: none;
+}
+
+.boot__card {
+  text-align: center;
+}
+
+.boot__logo {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 9vw, 5.5rem);
+  color: var(--paper-white);
+  text-shadow: 5px 5px 0 var(--ink);
+  letter-spacing: 0.04em;
+}
+
+.boot__sub {
+  font-family: var(--font-chrome);
+  font-size: 1.3rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.boot__bar {
+  width: min(20rem, 70vw);
+  height: 1.4rem;
+  margin: 0 auto;
+  border: 3px solid var(--ink);
+  background: var(--paper-white);
+  box-shadow: var(--shadow-paper-sm);
+}
+
+.boot__bar span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--paper-red);
+  animation: boot-fill 0.9s steps(7) forwards;
+}
+
+@keyframes boot-fill {
+  to {
+    width: 100%;
+  }
+}
+
+/* ————— cookie parody ————— */
+#cookie-note {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 24rem;
+  padding: 0.6rem 0.9rem;
+  background: var(--paper-kraft);
+  border: 3px solid var(--ink);
+  box-shadow: var(--shadow-paper);
+  font-family: var(--font-chrome);
+  font-size: 1.15rem;
+  rotate: -1deg;
+}
+
+/* ————— screensaver ————— */
+#screensaver {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  background: #14121076;
+  backdrop-filter: saturate(0.4);
+  background-color: rgba(20, 18, 16, 0.9);
+}
+
+.screensaver__head {
+  position: absolute;
+  width: 9rem;
+  height: 12.7rem;
+  will-change: transform;
+}
+
+#screensaver p {
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  text-align: center;
+  color: var(--paper-snow);
+  font-family: var(--font-chrome);
+  font-size: 1.2rem;
+}
+
+/* ————— no-JS fallback: everything becomes a document ————— */
+html.nojs #boot,
+html.nojs #icons {
+  display: none;
+}
+
+html.nojs body {
+  overflow: auto;
+}
+
+html.nojs #desktop {
+  height: auto;
+  overflow: visible;
+}
+
+.noscript-note {
+  position: relative;
+  z-index: 20;
+  margin: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--paper-yellow);
+  border: 3px solid var(--ink);
+  font-family: var(--font-chrome);
+  font-size: 1.15rem;
+}
+
+/* ————— mobile: stacked paper cards ————— */
+@media (max-width: 900px) {
+  body {
+    overflow: auto;
+  }
+
+  #desktop {
+    height: auto;
+    overflow: visible;
+    padding: 1rem 1rem 4rem;
+  }
+
+  #scene {
+    position: fixed;
+    z-index: -1;
+  }
+
+  #icons {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  #icons > a,
+  #icons > button {
+    width: 5rem;
+  }
+}
+
+/* ————— reduced motion ————— */
+@media (prefers-reduced-motion: reduce) {
+  .cloud--1,
+  .cloud--2,
+  .paper-btn:hover,
+  #icons > :hover svg {
+    animation: none !important;
+  }
+}
+
+/* ————— print: just the facts ————— */
+@media print {
+  #menubar,
+  #icons,
+  #scene,
+  #boot,
+  #cookie-note,
+  #screensaver,
+  .window__controls,
+  #win-prize {
+    display: none !important;
+  }
+
+  body {
+    overflow: visible;
+    background: #fff;
+  }
+
+  body::after {
+    display: none;
+  }
+}

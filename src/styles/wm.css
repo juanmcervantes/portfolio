@@ -1,0 +1,214 @@
+/* PAPER OS · window chrome: paper scraps with hand-cut edges */
+#windows {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+}
+
+.window {
+  position: absolute;
+  left: var(--x, 10%);
+  top: var(--y, 10%);
+  width: min(var(--w, 26rem), calc(100vw - 2rem));
+  max-height: calc(100% - 3rem);
+  display: none;
+  flex-direction: column;
+  rotate: var(--r, 0deg);
+}
+
+.window[data-open] {
+  display: flex;
+}
+
+/* the paper sheet itself, cut with scissors */
+.window::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  background: var(--paper-snow);
+  filter: url(#rough-md);
+  box-shadow: var(--shadow-paper);
+  z-index: -1;
+}
+
+/* title bar = a colored paper label taped on top */
+.window__bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: -0.55rem -0.7rem 0.1rem;
+  padding: 0.28rem 0.7rem 0.22rem;
+  rotate: -0.6deg;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.window__bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bar, var(--paper-yellow));
+  filter: url(#rough-sm);
+  box-shadow: var(--shadow-paper-sm);
+  z-index: -1;
+}
+
+.window--dragging .window__bar {
+  cursor: grabbing;
+}
+
+.window__title {
+  margin: 0;
+  font-family: var(--font-chrome);
+  font-size: 1.45rem;
+  font-weight: normal;
+  letter-spacing: 0.03em;
+  text-transform: lowercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.window__controls {
+  display: flex;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.window__btn {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: 2.5px solid var(--ink);
+  border-radius: 50%;
+  background: var(--paper-white);
+  font-family: var(--font-chrome);
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.window__btn:hover,
+.window__btn:focus-visible {
+  background: var(--paper-red);
+  color: var(--paper-white);
+  animation: wobble var(--wobble);
+}
+
+.window__body {
+  padding: 0.8rem 1rem 1rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  font-size: 0.95rem;
+}
+
+/* minimize = fold the sheet up to its label */
+.window[data-min] .window__body {
+  display: none;
+}
+
+.window__body > p:first-child {
+  margin-top: 0;
+}
+
+/* per-window construction paper colors */
+.window[data-color="yellow"] {
+  --bar: var(--paper-yellow);
+}
+.window[data-color="blue"] {
+  --bar: var(--paper-blue);
+}
+.window[data-color="green"] {
+  --bar: var(--paper-green);
+}
+.window[data-color="purple"] {
+  --bar: var(--paper-purple);
+}
+.window[data-color="orange"] {
+  --bar: var(--paper-orange);
+}
+.window[data-color="teal"] {
+  --bar: var(--paper-teal);
+}
+.window[data-color="red"] {
+  --bar: var(--paper-red-soft);
+}
+.window[data-color="kraft"] {
+  --bar: var(--paper-kraft);
+}
+
+.window--popup {
+  z-index: 300;
+}
+
+/* no-JS / mobile: windows become stacked cards in document flow */
+html.nojs .window,
+html.nojs .window[data-open] {
+  display: flex;
+  position: relative;
+  left: auto;
+  top: auto;
+  width: min(var(--w, 26rem), 100%);
+  max-height: none;
+  margin: 1.5rem auto;
+}
+
+html.nojs #win-prize {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  #windows {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+  }
+
+  /* the desktop folds into a document: every window is a card by default,
+     independent of [data-open] (which is a desktop-only concept) */
+  .window {
+    display: flex;
+    position: static;
+    width: 100%;
+    max-width: 32rem;
+    max-height: none;
+    margin: 0;
+  }
+
+  .window[data-closed],
+  .window[data-min],
+  #win-prize:not([data-open]) {
+    display: none;
+  }
+
+  .window__bar {
+    cursor: default;
+  }
+
+  .window__body {
+    overflow-y: visible;
+    font-size: 1rem;
+  }
+}
+
+@media print {
+  #windows {
+    position: static;
+  }
+
+  .window,
+  .window[data-open] {
+    display: flex;
+    position: static;
+    width: auto;
+    max-height: none;
+    margin: 1rem 0;
+    rotate: none;
+  }
+}
