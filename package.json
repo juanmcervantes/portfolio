@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "mkdir -p public/fellowship && base64 -d .fellowship-source/site-v2.tar.xz.base64 | tar -xJ -f - -C public/fellowship && tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
